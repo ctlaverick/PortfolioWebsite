@@ -34,7 +34,7 @@ export default function HomePage() {
         <h2 className="text-3xl font-bold mb-4">About Me</h2>
         <p className="text-muted-foreground">
           [Write about yourself here – your studies, career goals, what you’re
-          passionate about.]
+          passionate about. Coming Soon!]
         </p>
       </section>
 
