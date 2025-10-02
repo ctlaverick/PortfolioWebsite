@@ -1,10 +1,19 @@
-type ProjectCardProps = {
+export type StatusType = "Completed" | "In-progress" | "Stopped";
+export type ProjectType =
+  | "Portfolio Project"
+  | "Client Project"
+  | "Academic Project"
+  | "Upcoming Project"
+  | "Software Project"
+  | "Technical Challenge";
+
+export type ProjectCardProps = {
   title: string;
-  type: string;
+  type: ProjectType;
   description: string;
   languages: string[];
   skills: string[];
-  status: string
+  status: StatusType;
   githubLink?: string;
   liveLink?: string;
 };

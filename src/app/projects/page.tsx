@@ -1,7 +1,8 @@
 import ProjectCard from "@/components/projectCard";
+import type { ProjectCardProps } from "@/components/projectCard"; // 👈 import the props type
 
 export default function ProjectsPage() {
-  const projects = [
+  const projects: ProjectCardProps[] = [ // 👈 explicitly typed
     {
       title: "E-commerce Website",
       type: "Portfolio Project",
