@@ -11,7 +11,7 @@ export default function HomePage() {
         </h1>
         <p className="text-lg text-muted-foreground max-w-2xl mb-6">
           A Computer Science student and aspiring software engineer, passionate
-          about building web applications, simulations, and automation tools.
+          about building web applications, software, simulations, and automation tools.
         </p>
         <div className="flex gap-4">
           <a
@@ -34,7 +34,7 @@ export default function HomePage() {
         <h2 className="text-3xl font-bold mb-4">About Me</h2>
         <p className="text-muted-foreground">
           [Write about yourself here – your studies, career goals, what you’re
-          passionate about. Coming Soon!]
+          passionate about. Coming Soon! I promise!]
         </p>
       </section>
 
