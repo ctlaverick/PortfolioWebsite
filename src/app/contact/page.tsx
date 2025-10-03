@@ -1,5 +1,5 @@
-import ContactLink from "@/components/ContactLink";
-import ContactForm from "@/components/ContactForm";
+import ContactLink from "@/components/contact/ContactLink";
+import ContactForm from "@/components/contact/ContactForm";
 import { Linkedin, Mail, Github } from "lucide-react";
 
 export default function ContactPage() {
@@ -19,17 +19,17 @@ export default function ContactPage() {
       <section className="space-y-6">
         <div className="flex flex-col space-y-4">
           <ContactLink
-            href="https://www.linkedin.com/in/charleslaverick"
+            href="https://www.linkedin.com/in/ctlaverick/"
             icon={<Linkedin className="h-6 w-6 text-accent dark:text-accent" />}
             label="Connect on LinkedIn"
           />
           <ContactLink
-            href="mailto:charles@example.com"
+            href="mailto:ctlaverick3@gmail.com"
             icon={<Mail className="h-6 w-6 text-accent dark:text-accent" />}
             label="Send me an Email"
           />
           <ContactLink
-            href="https://github.com/charleslaverick"
+            href="https://github.com/ctlaverick"
             icon={<Github className="h-6 w-6 text-accent dark:text-accent" />}
             label="View my GitHub"
           />

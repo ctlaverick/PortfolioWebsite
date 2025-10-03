@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export type StatusType = "Completed" | "In-progress" | "Stopped";
 export type ProjectType =
   | "Portfolio Project"
@@ -8,6 +10,7 @@ export type ProjectType =
   | "Technical Challenge";
 
 export type ProjectCardProps = {
+  id: string;
   title: string;
   type: ProjectType;
   description: string;
@@ -19,6 +22,7 @@ export type ProjectCardProps = {
 };
 
 export default function ProjectCard({
+  id,
   title,
   type,
   description,
@@ -85,7 +89,7 @@ export default function ProjectCard({
       </div>
 
       {/* Links */}
-      <div className="flex gap-4">
+      <div className="flex gap-4 flex-wrap items-center">
         {githubLink && (
           <a
             href={githubLink}
@@ -106,6 +110,14 @@ export default function ProjectCard({
             Live Site
           </a>
         )}
+
+        {/* 🔹 View Details button */}
+        <Link
+          href={`/projects/${id}`}
+          className="ml-auto px-3 py-1.5 text-sm bg-green-600 text-white rounded-md hover:bg-green-700"
+        >
+          View Details →
+        </Link>
       </div>
     </div>
   );

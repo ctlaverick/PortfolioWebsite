@@ -1,7 +1,19 @@
-// app/page.tsx
 import Link from "next/link";
+import projects from "@/data/projects";
+import blogs from "@/data/blogs";
+import ProjectHighlight from "@/components/projects/ProjectHighlightCard";
+import BlogHighlight from "@/components/blog/BlogHighlight";
 
 export default function HomePage() {
+  // Shuffle and take 3 random projects
+  const randomProjects = [...projects]
+    .sort(() => Math.random() - 0.5)
+    .slice(0, 3);
+  
+  const latestPost = [...blogs].sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+    )[0];
+  
   return (
     <main className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
@@ -33,8 +45,7 @@ export default function HomePage() {
       <section id="about" className="py-20 px-6 max-w-4xl mx-auto">
         <h2 className="text-3xl font-bold mb-4">About Me</h2>
         <p className="text-muted-foreground">
-          [Write about yourself here – your studies, career goals, what you’re
-          passionate about. Coming Soon! I promise! This is just testing the github webhook, I got it working Juul! Finally!]
+          I am a 22-year-old Computer Science student in my final year of study, passionate about problem-solving and continuous learning. Upon graduation, I aim to secure a role in the technology industry where I can apply my skills, gain valuable experience, and continue to grow as a professional. Beyond my academic and career pursuits, I enjoy playing cricket, gaming, and watching films often at the cinema.
         </p>
       </section>
 
@@ -52,21 +63,9 @@ export default function HomePage() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* Example Project Card */}
-            <div className="border rounded-xl p-6 shadow-sm hover:shadow-md transition">
-              <h3 className="font-semibold text-xl mb-2">Project Title</h3>
-              <p className="text-muted-foreground mb-4">
-                Short description of the project. Built with React, Next.js,
-                etc.
-              </p>
-              <a
-                href="https://github.com/yourrepo"
-                className="text-primary hover:underline"
-                target="_blank"
-              >
-                View on GitHub →
-              </a>
-            </div>
+            {randomProjects.map((project) => (
+              <ProjectHighlight key={project.id} project={project} />
+            ))}
           </div>
         </div>
       </section>
@@ -83,19 +82,7 @@ export default function HomePage() {
           </Link>
         </div>
 
-        <ul className="space-y-6">
-          <li className="border-b pb-4">
-            <Link
-              href="/blog/post-slug"
-              className="text-xl font-semibold hover:text-primary"
-            >
-              Blog Post Title
-            </Link>
-            <p className="text-muted-foreground text-sm mt-1">
-              A short preview of the blog post goes here...
-            </p>
-          </li>
-        </ul>
+        {latestPost && <BlogHighlight post={latestPost} />}
       </section>
 
       {/* Contact Section */}

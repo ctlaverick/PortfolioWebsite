@@ -1,30 +1,26 @@
-import BlogPostCard from "@/components/blog/BlogPostCard";
-import { getSortedPostsData } from "@/lib/blog";
+import Link from "next/link";
+import blogs from "@/data/blogs";
 
-export default async function BlogPage() {
-  const blogPosts = await getSortedPostsData();
-
+export default function BlogList() {
   return (
-    <main className="max-w-4xl mx-auto p-6 space-y-8">
-      <section className="space-y-2">
-        <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100">Blog</h1>
-        <p className="text-gray-600 dark:text-gray-300">
-          My thoughts, experiments, and projects — all in one place.
-        </p>
-      </section>
-
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {blogPosts.map((post) => (
-          <BlogPostCard
-            key={post.slug}
-            title={post.title}
-            date={post.date}
-            excerpt={post.excerpt}
-            slug={post.slug}
-            tags={post.tags}
-          />
+    <main className="max-w-5xl mx-auto py-20 px-6">
+      <h1 className="text-4xl font-bold mb-8">Blog</h1>
+      <ul className="space-y-6">
+        {blogs.map((post) => (
+          <li key={post.id} className="border-b pb-4">
+            <Link
+              href={`/blog/${post.slug}`}
+              className="text-xl font-semibold hover:text-primary"
+            >
+              {post.title}
+            </Link>
+            <p className="text-muted-foreground text-sm mt-1">{post.excerpt}</p>
+            <p className="text-xs opacity-60 mt-1">
+              {new Date(post.date).toLocaleDateString()}
+            </p>
+          </li>
         ))}
-      </section>
+      </ul>
     </main>
   );
 }
