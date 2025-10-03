@@ -19,6 +19,8 @@
 
 # production
 /build
+webhook.js
+deploy.sh
 
 # misc
 .DS_Store
