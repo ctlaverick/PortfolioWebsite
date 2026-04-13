@@ -60,8 +60,8 @@ const projects: Project[] = [
     type: "Academic Project",
     description:
       "As part of a university assignment for the Data Structures & Algorithms module, I optimised various algorithms for performance and efficiency. This included implementing sorting algorithms, searching techniques, and data structure manipulations to improve time and space complexity. The final task in this assignment was optimised so that it was able to be ran in a few minutes rather than several days or even weeks.",
-    languages: ["Python", "C++"],
-    skills: ["Algorithm Design", "Performance Analysis"],
+    languages: ["Python",],
+    skills: ["Algorithm Design", "Performance Analysis", "Data Structures", "Optimization", "Problem Solving", ],
     status: "Completed",
     githubLink: "https://github.com/ctlaverick/DSA-Assignment2",
   },
